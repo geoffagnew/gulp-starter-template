@@ -14,6 +14,12 @@
 * gulpfile.js
 * package.json
 
+### To build files for production
+From terminal, run this command:
+```
+NODE_ENV=production
+```
+
 ### Dependencies
 * gulp
 * browserify

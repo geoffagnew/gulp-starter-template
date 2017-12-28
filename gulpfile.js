@@ -1,4 +1,4 @@
-// declarations, dependencies
+// Dependency declaration
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
     source = require('vinyl-source-stream'),
@@ -10,8 +10,19 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass');
 
+// Variable declaration
+var jsSources;
+
+// env = process.env.NODE_ENV || 'development';
+
+// if (env === 'development') {
+//   outputDir = 'builds/development/'
+// } else {
+//   outputDir = 'builds/production/'
+// }
+
 // Js source files
-var jsSources = [
+jsSources = [
   'components/scripts/rclick.js',
   'components/scripts/pixgrid.js',
   'components/scripts/tagline.js',
@@ -64,14 +75,24 @@ gulp.task('html', function () {
 
 // --------------------- Production build tasks
 
-// Uglifyjs task
-gulp.task('uglifyJs', function () {
+// Compress js
+gulp.task('minifyJs', function () {
   pump([
     gulp.src('builds/development/js/script.js'),
     uglify(),
     gulp.dest('builds/production/js')
   ]);
 });
+
+// Compress css
+gulp.task('minifyCss', function () {
+  return gulp.src('builds/development/css/*.css')
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(gulp.dest('builds/production/css'))
+});
+
+// Bulk minify task
+gulp.task('minify', ['minifyJs', 'minifyCss']);
 
 // --------------------- Watch tasks
 

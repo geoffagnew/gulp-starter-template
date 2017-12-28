@@ -1,5 +1,5 @@
 $('h1').addClass('ballsack');
-$('.conferenceinfo .container').prepend("<p>It's me, Georgie Boi! I'm a tomato!</p>");
+$('.conferenceinfo .container').prepend("<p>It's me, Georgie Boi! I'm a tomato ok?</p>");
 
 // var heading1 = document.getElementsByTagName('h1');
 
