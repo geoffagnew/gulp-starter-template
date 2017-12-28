@@ -62,10 +62,6 @@ gulp.task('html', function () {
     .pipe(connect.reload());
 });
 
-gulp.task('watchHtml', function () {
-  gulp.watch(['builds/development/*.html'], ['html']);
-});
-
 // --------------------- Production build tasks
 
 // Uglifyjs task
@@ -79,11 +75,12 @@ gulp.task('uglifyJs', function () {
 
 // --------------------- Watch tasks
 
-gulp.task('watchCss', function() {
+gulp.task('watch', function() {
+  gulp.watch(['builds/development/*.html'], ['html']);
   gulp.watch(['components/scss/*.scss'], ['sass']);
 });
 
 // Watch task for js, scss and html reload
-gulp.task('default', ['connect', 'watchHtml', 'watchJs' , 'watchCss']);
+gulp.task('default', ['connect', 'watch', 'watchJs']);
 
 

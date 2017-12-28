@@ -101,7 +101,7 @@ $(function() {
 
 },{"jquery":6,"mustache":7}],5:[function(require,module,exports){
 $('h1').addClass('ballsack');
-$('.conferenceinfo .container').prepend("<p>It's me, Georgie Boi! I'm a tomato hat!</p>");
+$('.conferenceinfo .container').prepend("<p>It's me, Georgie Boi! I'm a tomato!</p>");
 
 // var heading1 = document.getElementsByTagName('h1');
 
