@@ -1,11 +1,11 @@
 # Simple front-end workflow
 
-## Project structure
+### Project structure
 * builds
-  * development (built files)
-    * css
+  * development
+    * css (built files)
     * images (source images)
-    * js
+    * js (built files)
     * index.html (source html)
   * production
 * components
@@ -13,3 +13,15 @@
   * scss (source scss)
 * gulpfile.js
 * package.json
+
+### Dependencies
+* gulp
+* browserify
+* watchify
+* gulp-sass
+* gulp-util
+* (scss sourcemaps)
+* (uglify css)
+* (uglify js)
+* (uglify html)
+* (image compression)
