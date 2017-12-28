@@ -2,14 +2,14 @@
 
 ## Project structure
 * builds
-  * development
+  * development (built files)
     * css
-    * images
+    * images (source images)
     * js
-    * index.html
+    * index.html (source html)
   * production
 * components
-  * scripts
-  * scss
+  * scripts (source js)
+  * scss (source scss)
 * gulpfile.js
 * package.json
