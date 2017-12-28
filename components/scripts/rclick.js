@@ -1,5 +1,4 @@
 var rclick = function() {
-  var catName = "HoHo";
   var myNodes = document.querySelectorAll(".rclick");
 
   for (var i=0; i<myNodes.length; i++) {

@@ -38,7 +38,6 @@ var pixgrid = function() {
 
 },{}],2:[function(require,module,exports){
 var rclick = function() {
-  var catName = "HoHo";
   var myNodes = document.querySelectorAll(".rclick");
 
   for (var i=0; i<myNodes.length; i++) {
@@ -86,7 +85,9 @@ $ = require('jquery');
 
 fill;
 
-},{"jquery":5}],4:[function(require,module,exports){
+},{"jquery":6}],4:[function(require,module,exports){
+$ = require('jquery');
+
 $(function() {
   var Mustache = require('mustache');
 
@@ -98,7 +99,14 @@ $(function() {
 
 }); //function
 
-},{"mustache":6}],5:[function(require,module,exports){
+},{"jquery":6,"mustache":7}],5:[function(require,module,exports){
+$('h1').addClass('ballsack');
+$('.conferenceinfo .container').prepend("<p>It's your boy, gino! Say hello you animal.</p>");
+
+// var heading1 = document.getElementsByTagName('h1');
+
+
+},{}],6:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.2.1
  * https://jquery.com/
@@ -10353,7 +10361,7 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /*!
  * mustache.js - Logic-less {{mustache}} templates with JavaScript
  * http://github.com/janl/mustache.js
@@ -10985,4 +10993,4 @@ return jQuery;
   return mustache;
 }));
 
-},{}]},{},[2,1,3,4]);
+},{}]},{},[2,1,3,4,5]);
