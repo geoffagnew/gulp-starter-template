@@ -23,6 +23,7 @@
 * gulp-util
 * pump
 * gulp-uglify
+* gulp-connect
 * (scss sourcemaps)
 * (uglify css)
 * (uglify html)
