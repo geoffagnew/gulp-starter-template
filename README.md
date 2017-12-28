@@ -21,8 +21,9 @@
 * vinyl-source-stream
 * gulp-sass
 * gulp-util
+* pump
+* gulp-uglify
 * (scss sourcemaps)
 * (uglify css)
-* (uglify js)
 * (uglify html)
 * (image compression)

@@ -4,6 +4,9 @@ body {
   font-family: "Inika", serif;
   font-size: 1.1em; }
 
+#geoff-test {
+  color: purple; }
+
 #content {
   color: #CC8E94;
   font-size: 2em; }

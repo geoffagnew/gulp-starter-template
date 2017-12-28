@@ -80,7 +80,7 @@ var $, fill;
 $ = require('jquery');
 
 (fill = function(item) {
-  return $('.tagline').append(`${item}`);
+  return $('.tagline').append('${item}');
 })('The most creative minds in art');
 
 fill;
@@ -101,7 +101,7 @@ $(function() {
 
 },{"jquery":6,"mustache":7}],5:[function(require,module,exports){
 $('h1').addClass('ballsack');
-$('.conferenceinfo .container').prepend("<p>It's your boy, gino! Say hello you animal.</p>");
+$('.conferenceinfo .container').prepend("<p>It's me, Georgie Boi!</p>");
 
 // var heading1 = document.getElementsByTagName('h1');
 

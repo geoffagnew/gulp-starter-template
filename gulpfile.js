@@ -5,9 +5,10 @@ var gulp = require('gulp'),
     browserify = require('browserify'),
     watchify = require('watchify'),
     sourcemaps = require('gulp-sourcemaps'),
+    pump = require('pump'),
     uglify = require('gulp-uglify'),
-    sass = require('gulp-sass'),
-    coffee = require('gulp-coffee');
+    sass = require('gulp-sass');
+    // coffee = require('gulp-coffee');
 
 // Js source files
 var jsSources = [
@@ -19,27 +20,40 @@ var jsSources = [
 ];
 
 // Coffee script processing
-gulp.task('coffee', function() {
-  gulp.src('components/coffee/tagline.coffee')
-    .pipe(coffee({ bare: true })
-      .on('error', gutil.log))
-    .pipe(gulp.dest('components/scripts'))
-});
+// gulp.task('coffee', function() {
+//   gulp.src('components/coffee/tagline.coffee')
+//     .pipe(coffee({ bare: true })
+//       .on('error', gutil.log))
+//     .pipe(gulp.dest('components/scripts'))
+// });
 
-// Browserify task
-gulp.task('bundle', function() {
-  return browserify(jsSources)
-   .bundle()
-   .pipe(source('script.js'))
-   .pipe(gulp.dest('builds/development/js'));
+// Browserify and watchify task
+gulp.task('watchJs', function() {
+  var b = browserify({
+    entries: [jsSources],
+    cache: {},
+    packageCache: {},
+    plugin: [watchify]
+  });
+
+  b.on('update', rebundle);
+
+  function rebundle() {
+    return b.bundle()
+      .pipe(source('script.js'))
+      .pipe(gulp.dest('builds/development/js'));
+  }
+  return rebundle();
 });
 
 // Uglifyjs task
-// gulp.task('uglifyJs', function() {
-//   gulp.src('builds/development/js/script.js')
-//   uglify()
-//   gulp.dest('builds/production');
-// });
+gulp.task('uglifyJs', function () {
+  pump([
+    gulp.src('builds/development/js/script.js'),
+    uglify(),
+    gulp.dest('builds/production/js')
+  ]);
+});
 
 // Scss task
 gulp.task('sass', function () {
@@ -48,7 +62,8 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('builds/development/css'));
 });
 
-gulp.task('default', function() {
-  gulp.watch(['components/scripts/*.js'], ['bundle']);
+// Watch task for js and scss
+gulp.task('default', ['watchJs'], function() {
   gulp.watch(['components/scss/*.scss'], ['sass']);
 });
+
