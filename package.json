@@ -25,6 +25,7 @@
     "jquery": "^3.2.1",
     "mustache": "^2.3.0",
     "npm": "^5.6.0",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^3.9.0"
   }
 }

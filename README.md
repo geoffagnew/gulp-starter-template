@@ -18,6 +18,7 @@
 * gulp
 * browserify
 * watchify
+* vinyl-source-stream
 * gulp-sass
 * gulp-util
 * (scss sourcemaps)
