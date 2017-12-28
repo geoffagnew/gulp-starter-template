@@ -26,17 +26,17 @@ gulp.task('coffee', function() {
 gulp.task('bundle', function() {
   return browserify(jsSources)
    .bundle()
-   .pipe(source('bundled.js'))
+   .pipe(source('script.js'))
    .pipe(gulp.dest('builds/development/js'));
 });
 
-gulp.task('default', ['bundle'], function() {
-  return gulp.src([
-    'builds/development/js/bundled.js'
-  ])
-  .pipe(gconcat('script.js'))
-  .pipe(gulp.dest('builds/development/js'));
-});
+// gulp.task('default', ['bundle'], function() {
+//   return gulp.src([
+//     'builds/development/js/bundled.js'
+//   ])
+//   .pipe(gconcat('script.js'))
+//   .pipe(gulp.dest('builds/development/js'));
+// });
 
 
 gulp.task('concat', function() {
