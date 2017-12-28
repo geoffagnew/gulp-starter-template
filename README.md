@@ -1,5 +1,16 @@
 # Simple front-end workflow
 
+### Start a new project with this template
+From terminal, run:
+```
+npm install
+```
+To start the watch process and run your local server, run:
+```
+gulp
+```
+Be sure to adjust the *jsSources* variable in the gulp file before running _gulp_.
+
 ### Project structure
 * builds
   * development
@@ -17,8 +28,9 @@
 ### To build files for production
 From terminal, run this command:
 ```
-NODE_ENV=production
+gulp minify
 ```
+This will package the js, css, html and img folder, optimize the assets and move them to the build/production directory.
 
 ### Dependencies
 * gulp
