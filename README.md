@@ -1,6 +1,10 @@
-# Simple front-end workflow
+# Simple front-end starter template
 
-### Start a new project with this template
+## Requirements
+* Node
+* npm
+
+## Start a new project with this template
 From terminal, run:
 ```
 npm install
@@ -11,7 +15,7 @@ gulp
 ```
 Be sure to adjust the *jsSources* variable in the gulp file before running _gulp_.
 
-### Project structure
+## Project structure
 * builds
   * development
     * css (built files)
@@ -25,14 +29,14 @@ Be sure to adjust the *jsSources* variable in the gulp file before running _gulp
 * gulpfile.js
 * package.json
 
-### To build files for production
+## To build files for production
 From terminal, run this command:
 ```
 gulp minify
 ```
 This will package the js, css, html and img folder, optimize the assets and move them to the build/production directory.
 
-### Dependencies
+## Dependencies
 * gulp
 * browserify
 * watchify
@@ -42,7 +46,12 @@ This will package the js, css, html and img folder, optimize the assets and move
 * pump
 * gulp-uglify
 * gulp-connect
-* (scss sourcemaps)
-* (uglify css)
-* (uglify html)
-* (image compression)
+* gulp-htmlmin
+* gulp-json-minify
+
+## To do
+- [ ] Remove coffeescript folder
+- [ ] Remove gulp-coffee package
+- [ ] Remove mustache package
+- [ ] Remove jquery package
+- [ ] Get gulp-sourcemaps working
