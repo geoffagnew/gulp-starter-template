@@ -16,8 +16,7 @@ var gulp = require('gulp'),
 
 // Js source files
 var jsSources = [
-  'components/scripts/main.js',
-  'components/scripts/yolo.js'
+  'components/scripts/main.js'
 ];
 
 // --------------------- Development tasks
