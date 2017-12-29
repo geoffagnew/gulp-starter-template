@@ -27,6 +27,7 @@ Be sure to adjust the *jsSources* variable in the gulp file before running _gulp
 * components
   * scripts (source js)
   * scss (source scss)
+* .babelrc
 * gulpfile.js
 * package.json
 
@@ -38,5 +39,4 @@ gulp minify
 This will package the js, css, html and img folder, optimize the assets and move them to the build/production directory.
 
 ## To do
-- [ ] Install ESlint
 - [ ] Get gulp-sourcemaps working
