@@ -14,6 +14,13 @@ To start the watch process and run your local server, run:
 ```
 gulp
 ```
+This command does the following:
+* Starts a local server at http://localhost:8080/
+* Starts the watch process for eslint
+* Watches for changes in the .html files in the builds/development directory
+* Watches for changes in the components/scss directory
+* Initiates the browserify/watchify task
+
 Be sure to adjust the *jsSources* variable in the gulp file before running _gulp_.
 
 ## Project structure
