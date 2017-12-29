@@ -51,4 +51,6 @@ This will package the js, css, html and img folder, optimize the assets and move
 * gulp-json-minify
 
 ## To do
+- [ ] Install Babel
+- [ ] Install ESlint
 - [ ] Get gulp-sourcemaps working
