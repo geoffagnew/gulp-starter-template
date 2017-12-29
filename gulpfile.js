@@ -14,11 +14,7 @@ var gulp = require('gulp'),
 
 // Js source files
 var jsSources = [
-  'components/scripts/rclick.js',
-  'components/scripts/pixgrid.js',
-  'components/scripts/tagline.js',
-  'components/scripts/template.js',
-  'components/scripts/testing.js'
+  'components/scripts/main.js'
 ];
 
 // --------------------- Development tasks
