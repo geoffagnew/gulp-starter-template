@@ -1,4 +1,5 @@
-# Simple front-end starter template
+# Front-end starter template
+A simple front-end starter template built with gulp, browserify and watchify. Runs it's own webserver through gulp-connect (with live reload).
 
 ## Requirements
 * Node
