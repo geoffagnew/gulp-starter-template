@@ -1,5 +1,5 @@
 # Front-end starter template
-A simple front-end starter template built with gulp, browserify and watchify. Runs its own webserver through gulp-connect (with live reload).
+A simple front-end starter template built with gulp, browserify (+ watchify) and babelify. Runs its own webserver through gulp-connect (with live reload).
 
 ## Requirements
 * Node
@@ -37,20 +37,6 @@ gulp minify
 ```
 This will package the js, css, html and img folder, optimize the assets and move them to the build/production directory.
 
-## Dependencies
-* gulp
-* browserify
-* watchify
-* vinyl-source-stream
-* gulp-sass
-* gulp-util
-* pump
-* gulp-uglify
-* gulp-connect
-* gulp-htmlmin
-* gulp-json-minify
-
 ## To do
-- [ ] Install Babel
 - [ ] Install ESlint
 - [ ] Get gulp-sourcemaps working
