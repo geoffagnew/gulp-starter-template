@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     htmlmin = require('gulp-htmlmin'),
     jsonmin = require('gulp-json-minify'),
     babelify = require('babelify'),
+    eslint = require('gulp-eslint'),
     sass = require('gulp-sass');
 
 // Js source files
@@ -21,6 +22,30 @@ var jsSources = [
 
 // --------------------- Development tasks
 
+// Js linter
+gulp.task('linter', function(){
+  return gulp.src(jsSources)
+    .pipe(eslint({
+        rules: {
+            'semi': ['error', 'always'],
+            'quotes': ['error', 'single'],
+            'space-before-function-paren': 'off',
+            'no-unused-vars': 'off'
+        },
+        parserOptions: {
+            'ecmaVersion': 6
+        },
+        globals: [
+            'jQuery',
+            '$'
+        ],
+        envs: [
+            'browser'
+        ]
+    }))
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+});
 
 // Browserify and watchify task
 gulp.task('watchJs', function() {
@@ -41,16 +66,6 @@ gulp.task('watchJs', function() {
   }
   return rebundle();
 });
-
-// Temporary browserify + babelify task
-// gulp.task('jsTest', function() {
-//   return browserify(jsSources, {debug: true})
-//   .transform('babelify', {presets: ['env']})
-//   .bundle()
-//   .pipe(source('main.js'))
-//   .pipe(buffer())
-//   .pipe(gulp.dest('./builds/development/js/'))
-// });
 
 // Scss task
 gulp.task('sass', function () {
@@ -118,6 +133,7 @@ gulp.task('minify', ['minifyHtml', 'minifyJs', 'minifyCss', 'minifyJson', 'copyI
 // --------------------- Watch tasks
 
 gulp.task('watch', function() {
+  gulp.watch([jsSources], ['linter']);
   gulp.watch(['builds/development/*.html'], ['html']);
   gulp.watch(['components/scss/*.scss'], ['sass']);
 });

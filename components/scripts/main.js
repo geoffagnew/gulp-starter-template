@@ -1,6 +1,6 @@
 // Js
 
-const firstName = "Geoff \'Get REKT\'";
-const myName = `${ firstName } Agnew`;
+const firstName = 'TOTALLY REKT';
+const myName = `${ firstName } Magoo`;
 
 console.log(myName);

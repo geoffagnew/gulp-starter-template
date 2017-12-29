@@ -10,5 +10,5 @@ jspm_packages
 
 .DS_Store
 .tmp
-/builds/**/images/*
 package-lock.json
+cgi-bin
