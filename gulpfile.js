@@ -2,6 +2,7 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
     source = require('vinyl-source-stream'),
+    buffer = require('vinyl-buffer'),
     browserify = require('browserify'),
     watchify = require('watchify'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -10,33 +11,49 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     htmlmin = require('gulp-htmlmin'),
     jsonmin = require('gulp-json-minify'),
+    babel = require('gulp-babel'),
+    babelify = require('babelify'),
+    bPresets = require('babel-preset-env'),
     sass = require('gulp-sass');
 
 // Js source files
 var jsSources = [
-  'components/scripts/main.js'
+  'components/scripts/main.js',
+  'components/scripts/yolo.js'
 ];
 
 // --------------------- Development tasks
 
+
 // Browserify and watchify task
-gulp.task('watchJs', function() {
-  var b = browserify({
-    entries: [jsSources],
-    cache: {},
-    packageCache: {},
-    plugin: [watchify]
-  });
+// gulp.task('watchJs', function() {
+//   var b = browserify({
+//     entries: [jsSources],
+//     cache: {},
+//     packageCache: {},
+//     plugin: [watchify]
+//   });
 
-  b.on('update', rebundle);
+//   b.on('update', rebundle);
 
-  function rebundle() {
-    return b.bundle()
-      .pipe(source('script.js'))
-      .pipe(gulp.dest('builds/development/js'))
-      .pipe(connect.reload());
-  }
-  return rebundle();
+//   function rebundle() {
+//     return b.bundle()
+//       .pipe(source('script.js'))
+//       // .pipe(babel({presets: ['env']}))
+//       .pipe(gulp.dest('builds/development/js'))
+//       .pipe(connect.reload());
+//   }
+//   return rebundle();
+// });
+
+// Temporary browserify + babelify task
+gulp.task('jsTest', function() {
+  return browserify(jsSources, {debug: true})
+  .transform('babelify', {presets: ["env"]})
+  .bundle()
+  .pipe(source('main.js'))
+  .pipe(buffer())
+  .pipe(gulp.dest('./builds/development/js/'))
 });
 
 // Scss task
