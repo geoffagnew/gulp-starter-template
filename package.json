@@ -1,11 +1,11 @@
 {
-  "name": "workflow-lynda",
+  "name": "gulp-starter-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple front-end starter template built with gulp, browserify and watchify. Runs its own webserver through gulp-connect (with live reload).",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:geoffagnew/workflow-sample.git"
+    "url": "git@github.com:geoffagnew/gulp-starter-template.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,7 +16,6 @@
   "devDependencies": {
     "browserify": "^14.5.0",
     "gulp": "^3.9.1",
-    "gulp-coffee": "^3.0.0",
     "gulp-connect": "^5.0.0",
     "gulp-htmlmin": "^4.0.0",
     "gulp-json-minify": "^1.2.0",
@@ -25,8 +24,6 @@
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "i": "^0.3.6",
-    "jquery": "^3.2.1",
-    "mustache": "^2.3.0",
     "npm": "^5.6.0",
     "pump": "^2.0.0",
     "vinyl-source-stream": "^2.0.0",

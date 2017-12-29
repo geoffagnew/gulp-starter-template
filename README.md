@@ -1,5 +1,5 @@
 # Front-end starter template
-A simple front-end starter template built with gulp, browserify and watchify. Runs it's own webserver through gulp-connect (with live reload).
+A simple front-end starter template built with gulp, browserify and watchify. Runs its own webserver through gulp-connect (with live reload).
 
 ## Requirements
 * Node
@@ -51,8 +51,4 @@ This will package the js, css, html and img folder, optimize the assets and move
 * gulp-json-minify
 
 ## To do
-- [ ] Remove coffeescript folder
-- [ ] Remove gulp-coffee package
-- [ ] Remove mustache package
-- [ ] Remove jquery package
 - [ ] Get gulp-sourcemaps working
