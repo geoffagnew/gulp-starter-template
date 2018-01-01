@@ -15,15 +15,15 @@ var gulp = require('gulp'),
     sass = require('gulp-sass');
 
 // Js source files
-var jsSources = [
-  'components/scripts/main.js'
-];
+// var jsSources = [
+//   'components/scripts/main.js'
+// ];
 
 // --------------------- Development tasks
 
 // Js linter
 gulp.task('linter', function(){
-  return gulp.src(jsSources)
+  return gulp.src('components/scripts/*.js')
     .pipe(eslint({
         rules: {
             'semi': ['error', 'always'],
@@ -49,7 +49,7 @@ gulp.task('linter', function(){
 // Browserify and watchify task
 gulp.task('watchJs', function() {
   var b = browserify({
-    entries: [jsSources],
+    entries: ['components/scripts/main.js'],
     cache: {},
     packageCache: {},
     plugin: [watchify]
@@ -132,7 +132,7 @@ gulp.task('minify', ['minifyHtml', 'minifyJs', 'minifyCss', 'minifyJson', 'copyI
 // --------------------- Watch tasks
 
 gulp.task('watch', function() {
-  gulp.watch([jsSources], ['linter']);
+  gulp.watch(['components/scripts/*.js'], ['linter']);
   gulp.watch(['builds/development/*.html'], ['html']);
   gulp.watch(['components/scss/*.scss'], ['sass']);
 });
