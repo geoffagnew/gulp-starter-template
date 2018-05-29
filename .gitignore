@@ -10,5 +10,4 @@ jspm_packages
 
 .DS_Store
 .tmp
-package-lock.json
 cgi-bin
